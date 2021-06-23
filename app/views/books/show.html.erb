@@ -6,7 +6,7 @@
     </div>
     <% end %>
 
-<%= render 'books/list', book: @book, user: @user %>
+<%= render 'books/list', book: @booknew, user: @user %>
 
 
 <div class="col-md-8 offset-md-1">
@@ -14,7 +14,11 @@
   		<table class="table">
   		  <tbody><tr>
           <td>
+          <%= link_to user_path(@user) do %>
         <%= attachment_image_tag @book.user, :profile_image, size: "60x60", fallback: "no_image.jpg" %>
+        <br>
+        <%= link_to @user.name, user_path(@user)  %>
+        <% end %>
     </td>
           <td><%= @book.title %></td>
           <td><%= @book.body %></td>
