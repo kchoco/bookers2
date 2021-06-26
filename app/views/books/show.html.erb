@@ -5,6 +5,11 @@
          <%= flash[:success] %>
     </div>
     <% end %>
+      <% if flash[:notice] %>
+    <div class="flash">
+         <%= flash[:notice] %>
+    </div>
+    <% end %>
 
 <%= render 'books/list', book: @booknew, user: @user %>
 
